@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button, Row, Col, Table } from 'react-bootstrap';
+import { Table, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -11,7 +11,6 @@ import Message from '../components/Message';
 
 import { deleteStore, listMyStores } from '../actions/storeActions';
 import { STORE_DELETE_RESET, STORE_CREATE_RESET, STORE_UPDATE_RESET } from '../constants/storeConstants';
-
 
 function ProfileScreen() {
     const navigate = useNavigate()
@@ -64,7 +63,6 @@ function ProfileScreen() {
 
     const saveImageHandler = (image) => {
         let fileName = getFileName(image);
-        console.log(fileName)
         saveAs(image, fileName);
     }
 
@@ -108,7 +106,7 @@ function ProfileScreen() {
                                     <td>{store.is_active ? <i className='fas fa-check' style={{ color: 'green' }} /> : (
                                         <i className='fas fa-times' style={{ color: 'red' }} />
                                     )}</td>
-                                    <td><img src={store.logo_url} width={60} alt={store.name}/></td>
+                                    <td><img src={store.logo_url} width={60} alt={store.name} /></td>
                                     <td>
                                         <LinkContainer to={`/stores/${store.id}/menu`}>
                                             <Button className='btn-sm'>Menu</Button>

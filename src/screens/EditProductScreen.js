@@ -76,7 +76,6 @@ function EditProductScreen() {
             product["price"] = price
         }
         if (is_active) {
-            console.log(is_active)
             product["is_active"] = is_active.toLowerCase() == "yes" ? true : false
         }
         dispatch(updateProductDetails(storeId, menuId, productId, product))

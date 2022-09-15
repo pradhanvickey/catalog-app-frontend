@@ -126,7 +126,9 @@ export const productListWithStoreReducers = (state = { products: [] }, action) =
             return { loading: true, products: [] }
 
         case PRODUCT_ALL_DETAIL_SUCCESS:
-            return { loading: false, products: action.payload }
+            return { loading: false, products: action.payload.items ,
+                page: action.payload.page,
+                pages:  Math.ceil(action.payload.total/8)}
 
         case PRODUCT_ALL_DETAIL_FAIL:
             return { loading: false, error: action.payload }

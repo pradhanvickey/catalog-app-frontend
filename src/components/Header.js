@@ -12,8 +12,6 @@ function Header() {
 
     const storeDetailsKey = useSelector(state => state.storeDetailsKey)
     const { store } = storeDetailsKey
-
-    console.log("store", store)
     const navigate = useNavigate();
 
     const dispatch = useDispatch();

@@ -16,9 +16,6 @@ function LoginScreen() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    console.log("navigate", navigate);
-
-
     const redirect = '/profile'
     const userLogin = useSelector(state => state.userLogin)
     const { error, loading, userInfo } = userLogin

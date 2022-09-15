@@ -66,8 +66,6 @@ export const listProductDetails = (menuId, productId) => async (dispatch) => {
 
         const { data } = await axios.get(`/menus/${menuId}/items/${productId}`, config);
 
-        console.log(data);
-
         dispatch({
             type: PRODUCT_DETAIL_SUCCESS,
             payload: data
@@ -211,10 +209,10 @@ export const updateProductDetails = (storeId, menuId, productId, product) => asy
 
 
 
-export const listProductUsingStoreName = (storeUniqueKey) => async (dispatch) => {
+export const listProductUsingStoreName = (storeUniqueKey, page=1) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_ALL_DETAIL_REQUEST })
-        const { data } = await axios.get(`/stores/${storeUniqueKey}/items`);
+        const { data } = await axios.get(`/stores/${storeUniqueKey}/items?page=${page}&size=8`);
 
         dispatch({
             type: PRODUCT_ALL_DETAIL_SUCCESS,

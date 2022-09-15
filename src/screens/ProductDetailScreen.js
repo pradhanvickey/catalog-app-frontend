@@ -15,7 +15,6 @@ function ProductDetailScreen() {
         dispatch(listProductDetails(menuId, id))
     }, [dispatch, menuId, id])
 
-    console.log(product)
     return (
         <div>
             <Link to={`/store/${storeId}/menu/${menuId}`} className='btn btn-dark my-3'>Back</Link>

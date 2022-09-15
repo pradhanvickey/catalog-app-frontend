@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -25,7 +25,7 @@ function CreateStoreScreen() {
     const { userInfo } = userLogin
     
     const storeCreate = useSelector(state => state.storeCreate)
-    const { loading: loadingCreate, error: errorCreate, success: successCreate, order: createdOrder } = storeCreate
+    const { loading: loadingCreate, error: errorCreate, success: successCreate } = storeCreate
 
     useEffect(() => {
         if (successCreate && userInfo) {

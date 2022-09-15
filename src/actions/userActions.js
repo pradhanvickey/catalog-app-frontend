@@ -129,7 +129,6 @@ export const register = (email, password) => async (dispatch) => {
                 ? error.response.data.detail
                 : error.message,
         })
-        console.log(error)
     }
 }
 
@@ -210,7 +209,6 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         localStorage.setItem('userInfo', JSON.stringify(data))
 
     } catch (error) {
-        console.log(error)
         dispatch({
             type: USER_UPDATE_PROFILE_FAIL,
             payload: error.response && error.response.data.detail

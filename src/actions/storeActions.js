@@ -251,7 +251,6 @@ export const updateStoreDetails = (storeId, store) => async (dispatch, getState)
         })
 
     } catch (error) {
-        console.log(error)
         dispatch({
             type: STORE_UPDATE_FAIL,
             payload: error.response && error.response.data.detail
